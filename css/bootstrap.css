@@ -900,18 +900,17 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #000;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #000;
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline: thin;
+  border-bottom: 3px solid #000;
 }
 figure {
   margin: 0;

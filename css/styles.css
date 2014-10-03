@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* CSS Document */
+.navFix{
+/*    margin: -45px -15px;
+*/    float: right;   
+}
+@media (min-width: 768px) {
+    
+}

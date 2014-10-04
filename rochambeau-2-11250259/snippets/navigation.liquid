@@ -1,0 +1,24 @@
+    <div class="row">
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav nav-pills nav-stacked">
+            {% for link in linklists.main-menu.links %}
+              {% if linklists[link.handle] == empty %}
+                <li class="{% if link.active %}active{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="collapse navbar-collapse">
+          <ul class="nav nav-pills">
+            {% for link in linklists.main-menu.links %}
+              {% if linklists[link.handle] == empty %}
+                <li class="{% if link.active %}active{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>

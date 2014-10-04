@@ -59,125 +59,37 @@
       </div>
       <div class="col-xs-2 col-sm-1 col-sm-offset-5"> {% include 'customer_links' %}<a class="navbar-badge" href="/cart"><span class="badge">{{ cart.item_count }}</span></a> </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav nav-pills nav-stacked">
-            {% for link in linklists.main-menu.links %}
-              {% if linklists[link.handle] == empty %}
-                <li class="{% if link.active %} current{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="collapse navbar-collapse">
-          <ul class="nav nav-pills">
-            {% for link in linklists.main-menu.links %}
-              {% if linklists[link.handle] == empty %}
-                <li class="{% if link.active %} current{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
+    {% include 'navigation' %}
+    
   </div>
 </nav>
-<div class="jumbotron heroBG"></div>
-  
-  <!-- Begin wrapper -->
-  <div id="transparency" class="wrapper">
-    <div class="row">      
-     
-      
-      <section id="nav" class="row p30">
-        <div class="span12">
-          <nav class="main">
-            {% include 'dropdown' %}
-          </nav> <!-- /.main -->
-          <nav class="mobile clearfix">
-            {% include 'mobile-menu' %}
-          </nav> <!-- /.mobile --> 
-        </div> 
-      </section> 
-      <!-- End below navigation -->
-      
-      <!-- Begin content-->
-      <section id="content" class="clearfix">
-          {% if template == "list-collections" %}
-          <div id="collection" class="row">
-            <div class="span12">
-              <h1><span>Product Collections</span></h1>
-            </div> <!-- /.span12 -->
-          </div> <!-- /.row -->
-          
-          <div class="row products masonry">
-            {% for collection in collections %}
-            {% unless collection.all_products_count == 0 or collection.handle == "frontpage" %}
-            {% include 'collection-loop' %}
-            {% endunless %}
-            {% endfor %}
-          </div> <!-- /#collection.row -->
-          {% else %}
-          {{ content_for_layout }}
-          {% endif %}
-      </section>
-      <!-- End content-->
-      
-    </div>
-  </div>
-  <!-- End wrapper -->
-  
-  <!-- Begin footer -->
-  <div class="footer-wrapper">
-    <footer>
-      <div class="row">
 
-        <div class="span12 full-border"></div>
-        
-        <!-- Begin latest blog post -->
-        {% if settings.footer_blog_post and blogs[settings.footer_blog_post].handle == settings.footer_blog_post and blogs[settings.footer_blog_post].articles.size > 0 %}
-        {% assign article = blogs[settings.footer_blog_post].articles.first %}
-        <div class="span4">
-          <div class="p30">
-            <h4>{{ settings.footer_blog_post_header }}</h4>
-            <p class="p10"><strong>{{ article.title | link_to: article.url }}</strong></p>
-            <p>{{ article.content | strip_html | truncatewords: 30 }}</p>
-          </div>
-        </div>
-        {% endif %}
-        <!-- End latest blog post -->
-        
-        {% if settings.footer_linklist != '' and linklists[settings.footer_linklist].links.size > 0 %}
-        <!-- Begin footer navigation -->
-        <div class="span4 footer-menu">          
-          <h4>{{ settings.footer_linklist_title }}</h4>
-          <ul class="unstyled">
-            {% for link in linklists[settings.footer_linklist].links %}
-              <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
-            {% endfor %}
-          </ul>
-          
-        </div>
-        <!-- End footer navigation -->
-        {% endif %}
-        
-        <!-- Begin newsletter/social -->
-        <div class="span4">
-          
-          {% if settings.footer_display_newsletter %}
-          <div class="p30">
-            <h4>Newsletter</h4>
-            <form action="{{ settings.mailing_list_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
-              <input type="email" value="" placeholder="Email Address" name="EMAIL" id="mail" /><input type="submit" class="btn newsletter" value="Subscribe" name="subscribe" id="subscribe" />
-            </form>
-          </div>
-          {% endif %}
-          
-          <div class="clearfix">
-            <h4>Follow Us</h4>
+  {% if template == "list-collections" %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><span>Product Collections</span></h1>
+      </div> <!-- /.col-md-12 -->
+    </div> <!-- /.row -->
+    <div class="row">
+      {% for collection in collections %}
+        {% unless collection.all_products_count == 0 or collection.handle == "frontpage" %}
+          {% include 'collection-loop' %}
+        {% endunless %}
+      {% endfor %}
+    </div> <!-- /#collection.row -->
+  </div> <!-- /.container -->
+  {% else %}
+    {{ content_for_layout }}
+  {% endif %}
+
+
+  <div class="footer">
+  <div class="container"> 
+    <!-- Example row of columns -->
+    <footer>
+      <p>&copy; Rochambeau 2014 | Pixle Rock Studios</p>
+      <h4>Follow Us</h4>
             {% if settings.twitter_link != blank %}<a href="{{ settings.twitter_link }}" title="{{ shop.name }} on Twitter" class="icon-social twitter">Twitter</a>{% endif %}
             {% if settings.facebook_link != blank %}<a href="{{ settings.facebook_link }}" title="{{ shop.name }} on Facebook" class="icon-social facebook">Facebook</a>{% endif %}
             {% if settings.youtube_link != blank %}<a href="{{ settings.youtube_link }}" title="{{ shop.name }} on YouTube" class="icon-social youtube">YouTube</a>{% endif %}
@@ -187,28 +99,10 @@
             {% if settings.vimeo_link != blank %}<a href="{{ settings.vimeo_link }}" title="{{ shop.name }} on Vimeo" class="icon-social vimeo">Vimeo</a>{% endif %}
             {% if settings.tumblr_link != blank %}<a href="{{ settings.tumblr_link }}" title="{{ shop.name }} on Tumblr" class="icon-social tumblr">Tumblr</a>{% endif %}
             {% if settings.google_link != blank %}<a href="{{ settings.google_link }}" title="{{ shop.name }} on Google+" class="icon-social google">Google+</a>{% endif %}
-          </div>
-          
-        </div>
-        <!-- End newsletter/social -->
-        
-        <!-- Begin copyright -->
-        <div class="span12 tc copyright">
-          <p>Copyright &copy; {{ 'now' | date: "%Y" }} {{ shop.name }} | {{ powered_by_link }}</p>
-          {% unless shop.enabled_payment_types == empty %}
-          <div class="credit-cards">
-             {% for type in shop.enabled_payment_types %}
-             <img width="50" src="{{ type | payment_type_img_url }}" />
-             {% endfor %}
-          </div> <!-- /.credit-cards -->
-          {% endunless %}
-        </div>
-        <!-- End copyright -->
-
-      </div>
     </footer>
   </div>
-  <!-- End footer -->
+</div>
+
     
   {{ 'jquery.flexslider-min.js' | asset_url | script_tag }}
 
@@ -219,46 +113,7 @@
   {{ 'jquery.fancybox.js' | asset_url | script_tag }}
 
   
-  {% if template contains 'product' %}
   
-  <script>
-
-  var selectCallback = function(variant, selector) {
-    
-     if (variant && variant.featured_image) {
-      var newImage = variant.featured_image; // New image object.
-      var mainImageDomEl = jQuery('.featured img')[0]; // DOM element of main image we need to swap.
-      Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
-    }
-    
-    if (variant && variant.available) {
-      jQuery('#add-to-cart').removeAttr('disabled').removeClass('disabled');
-      if(variant.price < variant.compare_at_price){
-        jQuery('#price-preview').html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}") + " <del>" + Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}") + "</del>");
-      } else {
-        jQuery('#price-preview').html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}"));
-      }
-    } else {
-      jQuery('#add-to-cart').addClass('disabled').attr('disabled', 'disabled');
-      var message = variant ? "Sold Out" : "Unavailable";
-      jQuery('#price-preview').text(message);
-    }
-  };
-  
-  jQuery(document).ready(function($){
-    new Shopify.OptionSelectors("product-select", { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
-
-    // Add label if only one product option and it isn't 'Title'.
-    {% if product.options.size == 1 and product.options.first != 'Title' %}
-      $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first | escape }}</label>');
-    {% endif %}
-  
-
-  });
-       
-  </script>
-  
-  {% endif %}
   {{ 'bootstrap.min.js' | asset_url | script_tag }}
 </body>
 </html>

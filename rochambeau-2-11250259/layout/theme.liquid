@@ -63,26 +63,22 @@
       <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">Shop</a></li>
-            <li><a href="#">Collection</a></li>
-            <li><a href="#">Campaign</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Stockist</a></li>
-            <li><a href="#">About</a></li>
+            {% for link in linklists.main-menu.links %}
+              {% if linklists[link.handle] == empty %}
+                <li class="{% if link.active %} current{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </div>
       </div>
       <div class="col-md-12">
         <div class="collapse navbar-collapse">
           <ul class="nav nav-pills">
-            <li class="active"><a href="#">Shop</a></li>
-            <li><a href="#">Collection</a></li>
-            <li><a href="#">Campaign</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Stockist</a></li>
-            <li><a href="#">About</a></li>
+            {% for link in linklists.main-menu.links %}
+              {% if linklists[link.handle] == empty %}
+                <li class="{% if link.active %} current{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -94,20 +90,7 @@
   <!-- Begin wrapper -->
   <div id="transparency" class="wrapper">
     <div class="row">      
-           
-      <!-- Begin below navigation -->
-      <div class="span12 clearfix">
-        <div class="logo">
-          {% if settings.use_logo %}
-          <h1><a href="/"><img src="{{ 'logo.gif' | asset_url }}" alt="{{ shop.name }}" /></a></h1>
-          {% if template == 'index' %}
-          <h1 style="display:none"><a href="/">{{ shop.name }}</a></h1>
-          {% endif %}
-          {% else %}
-          <h1><a href="/">{{ shop.name }}</a></h1>
-          {% endif %}
-        </div> 
-      </div> 
+     
       
       <section id="nav" class="row p30">
         <div class="span12">

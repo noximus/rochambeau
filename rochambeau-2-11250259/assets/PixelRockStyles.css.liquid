@@ -6,6 +6,12 @@
     background-size:cover;
     background-position:top center;
 }
+.aboutHeroBG{
+    min-height:342px;
+    background-image:url({{ 'about.jpg' | asset_url }});
+    background-size:cover;
+    background-position:top center;
+}
 .footer {
     background-color:#bbc8bd;
     position: relative;
@@ -27,8 +33,14 @@ footer{
     padding: 0px 5px;
     height:15px;
 }
+.bot30{
+    margin-bottom:30px;
+}
+.bot40{
+    margin-bottom:40px;
+}
 @media (min-width: 768px) {
-    .heroBG{
+    .heroBG, .aboutHeroBG{
         min-height:440px;
     }
     .footer {
@@ -53,9 +65,12 @@ footer{
         padding: 0px 5px;
         height:20px;
     }
+    .aboutHeroBG{
+        margin-bottom:40px;
+    }
 }
 @media (min-width: 992px) {
-    .heroBG{
+    .heroBG, .aboutHeroBG{
         min-height:550px;
     }
     .footer {
@@ -77,6 +92,9 @@ footer{
     .jumbotron{
         margin-bottom:100px;    
     }
+    .aboutHeroBG{
+        margin-bottom:40px;
+    }
     .icon-social{
         float:right;
         margin-top: -5px;
@@ -85,7 +103,7 @@ footer{
     }
 }
 @media (min-width: 1200px) {
-    .heroBG{
+    .heroBG, .aboutHeroBG{
         min-height:760px;
     }
     .icon-social{

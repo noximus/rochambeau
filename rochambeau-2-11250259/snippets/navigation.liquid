@@ -21,4 +21,19 @@
           </ul>
         </div>
       </div>
+      {% if template == 'collection' %}
+      <div class="col-md-12">
+        <div class="collapse navbar-collapse">
+          <ul class="nav nav-pills">
+          
+            {% for link in linklists.shop-navigation.links %}
+              {% if linklists[link.handle] == empty %}
+                <li class="{% if link.active %}active{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+      
     </div>

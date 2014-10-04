@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
+
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rochambeau</title>
+<link rel="canonical" href="{{ canonical_url }}" /> 
+
+{% include 'fb-open-graph-tags' %}
+  {% include 'twitter-cards' %}
+
+  {{ 'styles.css' | asset_url | stylesheet_tag }}
+  
+  {% if settings.header_font contains 'Google' %}
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.header_font | remove: 'Google+' }}:300,400,700">
+  {% endif %}
+  {% if settings.base_font contains 'Google' %}
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ settings.base_font | remove: 'Google+' }}:300,400,700">
+  {% endif %}
+  {{ 'html5shiv.js' | asset_url | script_tag }}
+
+  {{ content_for_header }}
+  
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' | script_tag }}
+  {{ 'jquery-migrate-1.2.0.min.js' | asset_url | script_tag }}
+  
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+  {% if template contains 'customers' %}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+  {{ 'scripts.js' | asset_url | script_tag }}
+
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 
@@ -33,7 +72,7 @@
       <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">Shop</a></li>
+            <li class="active"><a href="#">Shop</a></li>
             <li><a href="#">Collection</a></li>
             <li><a href="#">Campaign</a></li>
             <li><a href="#">Projects</a></li>
@@ -46,7 +85,7 @@
       <div class="col-md-12">
         <div class="collapse navbar-collapse">
           <ul class="nav nav-pills">
-            <li><a href="#">Shop</a></li>
+            <li class="active"><a href="#">Shop</a></li>
             <li><a href="#">Collection</a></li>
             <li><a href="#">Campaign</a></li>
             <li><a href="#">Projects</a></li>

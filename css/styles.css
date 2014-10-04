@@ -1,9 +1,5 @@
 @charset "UTF-8";
 /* CSS Document */
-.navFix{
-/*    margin: -45px -15px;
-*/    float: right;   
-}
 .heroBG{
     min-height:342px;
     background-image:url(../images/Hero.jpg);
@@ -22,6 +18,9 @@ footer{
     padding-top:18px;
     color:white;   
 }
+.jumbotron{
+    margin-bottom:50px;    
+}
 @media (min-width: 768px) {
     .heroBG{
         min-height:440px;
@@ -33,7 +32,15 @@ footer{
     footer{
         padding-top:28px;
     }
-    
+    .navbar{
+        height:138px;
+    }
+    .navbar-brand, .navbar-badge {
+        margin-top: 16px;
+    }
+    .jumbotron{
+        margin-bottom:75px;    
+    }
 }
 @media (min-width: 992px) {
     .heroBG{
@@ -45,6 +52,18 @@ footer{
     }
     footer{
         padding-top:40px;
+    }
+    .navbar{
+        height:238px;
+    }
+    .navbar-brand, .navbar-badge {
+        margin-top: 36px;
+    }
+    ul.nav.nav-pills {
+        margin-top: 15px;
+    }
+    .jumbotron{
+        margin-bottom:100px;    
     }
 }
 @media (min-width: 1200px) {

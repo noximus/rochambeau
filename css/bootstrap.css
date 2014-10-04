@@ -3690,7 +3690,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  color: #ffffff;
+  color: #000;
   background-color: #transparent;
   border-bottom: 3px solid #bbc8bd;
 }

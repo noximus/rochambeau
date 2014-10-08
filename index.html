@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/PixelRockStyles.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,10 +33,21 @@
       <div class="col-xs-2 col-sm-1 col-sm-offset-5"> <a class="navbar-badge" href="#"><span class="badge">2</span></a> </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg subnavBG">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">Shop</a></li>
+            <li class="dropdown active">
+              <a href="/collecions/all" class="dropdown-toggle" data-toggle="dropdown">Shop <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
             <li><a href="#">Collection</a></li>
             <li><a href="#">Campaign</a></li>
             <li><a href="#">Projects</a></li>

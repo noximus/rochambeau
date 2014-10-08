@@ -3115,26 +3115,22 @@ tbody.collapse.in {
   outline: 0;
 }
 .dropdown-menu {
-  position: absolute;
+  position: static;
   top: 100%;
   left: 0;
   z-index: 1000;
   display: none;
-  float: left;
   min-width: 160px;
+  width:100%;
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
   font-size: 14px;
   text-align: left;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
+  background-color: #bbc8bd;
+  border: 0px solid #cccccc;
+  border: 0px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0px;;
 }
 .dropdown-menu.pull-right {
   right: 0;
@@ -3573,10 +3569,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: block;
 }
 .nav > li > a {
-  position: relative;
-  display: block;
-  padding: 18px 0px 2px 0px;
-  margin-right:50px;
+    position: relative;
+    display: block;
+    padding: 18px 10px 20px 20px;
+    border: 1px solid white;
+    margin-right: 0px;
+    margin: 0px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -3598,7 +3596,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #428bca;
+  border-color: white;
 }
 .nav .nav-divider {
   height: 1px;
@@ -3657,6 +3655,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > li > a {
     margin-bottom: 0;
   }
+  .nav > li > a {
+      padding: 18px 0px 2px 0px;
+      margin-right:50px;
+    }
 }
 .nav-tabs.nav-justified > li > a {
   margin-right: 0;
@@ -3665,7 +3667,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs.nav-justified > .active > a,
 .nav-tabs.nav-justified > .active > a:hover,
 .nav-tabs.nav-justified > .active > a:focus {
-  border: 1px solid #dddddd;
+  border: none;
 }
 @media (min-width: 768px) {
   .nav-tabs.nav-justified > li > a {
@@ -3698,7 +3700,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: none;
 }
 .nav-stacked > li + li {
-  margin-top: 2px;
+  margin-top: 0px;
   margin-left: 0;
 }
 .nav-justified {

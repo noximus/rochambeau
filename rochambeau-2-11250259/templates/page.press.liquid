@@ -1,7 +1,8 @@
 <div class="container">
+
 	<div class="row">
 		<div class="col-xs-6 col-sm-4 col-md-3 bot30" >
-			<img class="img-responsive center-block" src="{{ 'press1.jpg' | asset_url }}" />
+			<img class="img-responsive center-block" src="{{ 'press1.jpg' | asset_url }}" data-toggle="modal" data-target=".bs-example-modal-lg"/>
 		</div>
 		<div class="col-xs-6 col-sm-4 col-md-3 bot30" >
 			<img class="img-responsive center-block" src="{{ 'press2.jpg' | asset_url }}" />
@@ -37,4 +38,12 @@
 			<img class="img-responsive center-block" src="{{ 'press4.jpg' | asset_url }}" />
 		</div>
 	</div>
+</div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+      <img class="img-responsive center-block" src="{{ 'press1.jpg' | asset_url }}"/>
+    </div>
+  </div>
 </div>

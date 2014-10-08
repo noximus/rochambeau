@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* CSS Document */
+.heroBG{
+    min-height:342px;
+    background-image:url({{ 'Hero.jpg' | asset_url }});
+    background-size:cover;
+    background-position:top center;
+}
+.aboutHeroBG{
+    min-height:342px;
+    background-image:url({{ 'about.jpg' | asset_url }});
+    background-size:cover;
+    background-position:top center;
+}
+.footer {
+    background-color:#bbc8bd;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    min-height: 48px;
+    font-size:8px;
+}
+footer{
+    padding-top:18px;
+    color:white;   
+}
+.jumbotron{
+    margin-bottom:50px;    
+}
+.icon-social{
+    float:right;
+    margin-top: -2px;
+    padding: 0px 5px;
+    height:15px;
+}
+.bot30{
+    margin-bottom:30px;
+}
+.bot40{
+    margin-bottom:40px;
+}
+.subnavBG{
+    background-color:#bbc8bd;
+}
+@media (min-width: 768px) {
+    .heroBG, .aboutHeroBG{
+        min-height:440px;
+    }
+    .footer {
+        min-height: 68px;
+        font-size:10px;
+    }
+    footer{
+        padding-top:28px;
+    }
+    .navbar{
+        height:138px;
+    }
+    .navbar-brand, .navbar-badge {
+        margin-top: 16px;
+    }
+    .jumbotron{
+        margin-bottom:75px;    
+    }
+    .icon-social{
+        float:right;
+        margin-top: -4px;
+        padding: 0px 5px;
+        height:20px;
+    }
+    .aboutHeroBG{
+        margin-bottom:40px;
+    }
+}
+@media (min-width: 992px) {
+    .heroBG, .aboutHeroBG{
+        min-height:550px;
+    }
+    .footer {
+        min-height: 100px;
+        font-size:12px;
+    }
+    footer{
+        padding-top:40px;
+    }
+    .navbar{
+        height:238px;
+    }
+    .navbar-brand, .navbar-badge {
+        margin-top: 36px;
+    }
+    ul.nav.nav-pills {
+        margin-top: 15px;
+    }
+    .jumbotron{
+        margin-bottom:100px;    
+    }
+    .aboutHeroBG{
+        margin-bottom:40px;
+    }
+    .icon-social{
+        float:right;
+        margin-top: -5px;
+        padding: 0px 15px;
+        height:30px;
+    }
+}
+@media (min-width: 1200px) {
+    .heroBG, .aboutHeroBG{
+        min-height:760px;
+    }
+    .icon-social{
+        margin-top: -5px;
+        padding: 0px 15px;
+    }
+    
+}

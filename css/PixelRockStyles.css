@@ -41,6 +41,17 @@ footer{
 }
 .subnavBG{
     background-color:#bbc8bd;
+    min-height:0px !important;
+}
+span.imgHovers {
+    display: block;
+    font-size: 18px;
+    position: absolute;
+    text-align: center;
+    width: 90%;
+    height: auto;
+    vertical-align: middle;
+    margin-top: 45%;
 }
 @media (min-width: 768px) {
     .heroBG, .aboutHeroBG{

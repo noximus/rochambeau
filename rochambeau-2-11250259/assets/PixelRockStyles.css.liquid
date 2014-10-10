@@ -12,6 +12,12 @@
     background-size:cover;
     background-position:top center;
 }
+.campaignHeroBG{
+    min-height:342px;
+    background-image:url({{ 'campaign.jpg' | asset_url }});
+    background-size:cover;
+    background-position:top center;
+}
 .footer {
     background-color:#bbc8bd;
     position: relative;
@@ -39,8 +45,29 @@ footer{
 .bot40{
     margin-bottom:40px;
 }
+.subnavBG{
+    background-color:#bbc8bd;
+    min-height:0px !important;
+}
+span.imgHovers {
+    display: block;
+    font-size: 18px;
+    position: absolute;
+    text-align: center;
+    width: 90%;
+    height: auto;
+    vertical-align: middle;
+    margin-top: 45%;
+}
+.stockist{
+    font-size:18px;
+    font-weight:bold;
+}
+.stockist.state{
+    font-size:14px;
+}
 @media (min-width: 768px) {
-    .heroBG, .aboutHeroBG{
+    .heroBG, .aboutHeroBG, .campaignHeroBG{
         min-height:440px;
     }
     .footer {
@@ -70,7 +97,7 @@ footer{
     }
 }
 @media (min-width: 992px) {
-    .heroBG, .aboutHeroBG{
+    .heroBG, .aboutHeroBG, .campaignHeroBG{
         min-height:550px;
     }
     .footer {
@@ -103,7 +130,7 @@ footer{
     }
 }
 @media (min-width: 1200px) {
-    .heroBG, .aboutHeroBG{
+    .heroBG, .aboutHeroBG, .campaignHeroBG{
         min-height:760px;
     }
     .icon-social{

@@ -1,18 +1,15 @@
 {% capture collection_handle %}{{ product-loop | handleize }}{% endcapture %}
 {% capture url %}{% if collection_handle != "" %}/collections/{{ product-loop }}{{ product.url }}{% else %}{{ product.url }}{% endif %}{% endcapture %}
-<div class="product col-md-3">
+<div class="col-xs-6 col-md-3 product">
   
   {% if product.price_min < product.compare_at_price_min %}
     <span class="circle sale">Sale</span>
   {% endif %}
-  
-  <div class="image">
-    <a href="{{ url }}">
-      <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape  }}" />
+    <a class="thumbnail" href="{{ url }}">
+      <img class="img-responsive" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape  }}" />
     </a>
-  </div>
   
-  <div class="details">
+  <!-- <div class="details">
     <a href="{{ url }}" class="clearfix">
       <h4 class="title">{{ product.title }}</h4>
       
@@ -30,7 +27,7 @@
       {% endif %}
       </span>
     </a>
-  </div>
+  </div> -->
 </div>
 
-{% cycle 'clear-product-loop': '', '', '<div style="clear:both;"></div>' %}
+{% cycle 'clear-product-loop': '', '', '' %}

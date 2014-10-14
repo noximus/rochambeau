@@ -54,11 +54,12 @@ span.imgHovers {
     margin-top: 45%;
 }
 .stockist{
-    font-size:18px;
+    font-size:14px;
     font-weight:bold;
 }
 .stockist.state{
-    font-size:14px;
+    font-size:18px;
+    font-weight:bold;
 }
 @media (min-width: 768px) {
     .heroBG, .aboutHeroBG{

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><v=/seo/title></title>
+<meta name="description" content="<v=/seo/description>" />
+<v:if path="staging()"><meta name="robots" content="noindex"></v:if>
+<v:asset framework="jquery" />
+<v:asset src="/css/styles.css" />
+<v:asset src="/css/styles.css" />
+<v:asset src="/css/galleriffic.css" />
+<v:asset src="/css/bootstrap.css" />
+<v:asset src="/css/bootstrap.min.css" />
+<v:asset src="/css/bootstrap-theme.css" />
+<v:asset src="/css/font-awesome.min.css" />
+<v:asset src="/css/carousel.css" />
+<v:asset src="/css/carousel-style.css" />
+<v:asset src="/css/style.css" />
+<script type="text/javascript" src="//use.typekit.net/rpm1ssp.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script>
+    $(document).ready(function() {
+        $(".fade").hover(function() {
+            $(this).fadeTo("slow", 0.6); // This sets the opacity to 60% on hover
+        }, function() {
+            $(this).fadeTo("slow", 1.0); // This sets the opacity back to 100% on mouseout
+        });
+    });
+	$(function() {
+		$("a[href='#update_cart']").click(function(e) {
+			$(this).parents("form").submit();
+		});
+	});
+</script>
+<v=/seo/analytics>
+</head>
+<body id="cart">
+	<div class="top-head">
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-6 mobileOnly">
+        <div class="col-xs-1"><a  target="_blank" href="http://instagram.com/Rochambeaunyc"><i class="fa fa-instagram"></i></a></div>
+        <div class="col-xs-9"><div class="logo"> <a href="index.html" ><img src="/images/logo.png"></a></div></div>
+        <div class="col-xs-1 right-one"><i><v:php> 
+			$item_count = verb_store_cart_items();
+			$real_item_count = 0;
+			foreach( $item_count as $item ) {
+				$real_item_count += $item['qty'];
+			}
+			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
+			if($real_item_count != 0){
+				if ($real_item_count == 0) {
+					$string = ' <a href="/cart">CART <span>( ' . '0' .  ' )</span></a> ';
+				} 
+				elseif( $real_item_count == 1 ) {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>( ' . $string . ' )</span></a> ';
+				} 
+				else {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>( ' . $string . ' )</span></a> ';
+				} 
+			return $string;
+			}
+			else {
+			} 
+		</v:php></i></div>
+      </div>
+        <div class="col-sm-6 exMobile"><div class="logo"> <a href="index.html" ><img src="/images/logo.png"></a></div></div>
+        <div class="col-sm-6">
+          <ul class="top-nav">
+            <li><a href="http://instagram.com/Rochambeaunyc" target="_blank">#ROCHAMBEAU</a></li>
+            <li><v:php> 
+			$item_count = verb_store_cart_items();
+			$real_item_count = 0;
+			foreach( $item_count as $item ) {
+				$real_item_count += $item['qty'];
+			}
+			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
+			if($real_item_count != 0){
+				if ($real_item_count == 0) {
+					$string = ' <a href="/cart">CART <span>( ' . '0' .  ' )</span></a> ';
+				} 
+				elseif( $real_item_count == 1 ) {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>( ' . $string . ' )</span></a> ';
+				} 
+				else {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>( ' . $string . ' )</span></a> ';
+				}
+			return $string;
+			}
+			else {
+			} 
+		</v:php></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-main">
+    <div class="container">
+      <ul>
+        <li class="dropdown"> <a href="index.html" class="active">SHOP</a> </li>
+        <li class="dropdown"> <a href="collectionS14.html" >COLLECTIONS</a> </li>
+        <li class="dropdown"> <a href="films.html">FILMS</a> </li>
+        <li class="dropdown"> <a href="stockist.html">STOCKIST</a> </li>
+        <li class="dropdown right-one exMobile"> <a href="press.html">PRESS</a> </li>
+      </ul>
+    </div>
+  </div>
+  
+<div class="container">
+		<div class="col-sm-12">
+		
+		<v:store:cart>
+            <div class="table-responsive">
+			    <table class="table">
+				<tr>
+					<th width="100" align="left" valign="top" scope="col">Item</th>
+					<th align="left" valign="top" scope="col">&nbsp;</th>
+					<th width="80" align="left" valign="top" scope="col">Size</th>
+					<th width="80" align="left" valign="top" scope="col">Quantity</th>
+					<th width="80" align="left" valign="top" scope="col">Price</th>
+					<th width="80" align="left" valign="top" scope="col">Subtotal</th>
+					<th width="80" align="center" valign="top" scope="col">Remove</th>
+				</tr>
+				<v:store:cart:items>
+					<tr class="table-row">
+						<td width="100" align="left" valign="top"><v:img path="main_image" width="64" height="64" image_size="63x63" /></td>
+						<td align="left" valign="top"><v:text path="../name" />
+							<br />
+							<v:text path="color" /></td>
+						<td width="80" align="left" valign="top"><v:text path="option_value" /></td>
+						<td width="80" align="left" valign="top"><v:text_field path="qty" class="quantity-field text-field" /></td>
+						<td width="80" align="left" valign="top">
+							$ <v:text path="price" number_format="2" />
+						</td>
+						<td width="80" align="left" valign="top">$
+							<v:text path="total" number_format="2" /></td>
+						<td width="80" align="center" valign="top"><v:checkbox path="remove" /></td>
+					</tr>
+				</v:store:cart:items>
+				<tr id="table-row-bottom">
+					<td colspan="4" align="left" valign="top"><a href="#update_cart" class="action button left">Update Cart</a></td>
+					<td width="80" align="left" valign="top">Total</td>
+					<td width="80" align="left" valign="top">$
+						<v:store:cart:subtotal /></td>
+					<td width="80" align="left" valign="top"><a href="/checkout" class="button right">Checkout</a></td>
+				</tr>
+			</table>
+            </div>
+		</v:store:cart>
+		<v:else>
+			Your cart is empty!
+		</v:else>
+	</div>
+	
+	
+	
+</div><v:template filename="__footer" />
+</body>
+</html>

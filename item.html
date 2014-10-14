@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<title><v=/seo/title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="<v=../seo>" />
+<v:if path="staging()"><meta name="robots" content="noindex"></v:if>
+<v:asset framework="jquery" />
+<v:asset src="/js/jquery.galleriffic.js" />
+<v:asset src="/js/jquery.opacityrollover.js" />
+<v:asset src="/css/styles.css" />
+<v:asset src="/css/galleriffic.css" />
+<v:asset src="/css/bootstrap.css" />
+<v:asset src="/css/bootstrap.min.css" />
+<v:asset src="/css/bootstrap-theme.css" />
+<v:asset src="/css/font-awesome.min.css" />
+<v:asset src="/css/carousel.css" />
+<v:asset src="/css/carousel-style.css" />
+<v:asset src="/css/style.css" />
+<script type="text/javascript" src="//use.typekit.net/rpm1ssp.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript"> 
+	document.write('<style>.noscript { display: none; }</style>');
+</script>
+<script>
+		$(document).ready(function() {
+				$(".fade").hover(function() {
+						$(this).fadeTo("slow", 0.6); // This sets the opacity to 60% on hover
+				}, function() {
+						$(this).fadeTo("slow", 1.0); // This sets the opacity back to 100% on mouseout
+				});
+
+		// KMB - transform dropdown inputs into links for Size/Color selection
+		$(".v_inputs")
+		.find("div").addClass("vbLine ItemSizes").end()
+		.find("label").prepend("").end()
+		.find("select").change(function() {
+			sel = $(this).val();
+			$(this).nextAll("a").remove().end()
+			.after($(this).find("option").map(function() {
+				v = $(this).attr("value");
+				return (v.length > 0 ? '<a href="#" class="'+ (v == sel ? 'selected' : '') + '">' + v + '</a>' : '');
+			}).get().join("")).hide();
+			$(this).nextAll("a").click(function(e) {
+			e.preventDefault();
+			$(this).addClass("selected").prevAll("select").val($(this).html()).parent().parent().find("select").trigger("change");
+			return false;
+			});
+		}).trigger("change");
+	});	
+</script>
+
+<style>
+	#color<v-> { border:1px solid #E3E3E3 }
+</style>
+<v=/seo/analytics>
+</head>
+<body class="wrapper">
+	<div class="top-head">
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-6 mobileOnly">
+        <div class="col-xs-1"><a  target="_blank" href="http://instagram.com/Rochambeaunyc"><i class="fa fa-instagram"></i></a></div>
+        <div class="col-xs-9"><div class="logo"> <a href="index.html" ><img src="/images/logo.png"></a></div></div>
+        <div class="col-xs-1 right-one"><i><v:php> 
+			$item_count = verb_store_cart_items();
+			$real_item_count = 0;
+			foreach( $item_count as $item ) {
+				$real_item_count += $item['qty'];
+			}
+			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
+			if($real_item_count != 0){
+				if ($real_item_count == 0) {
+					$string = ' <a href="/cart">CART <span>(' . '0' .  ')</span></a> ';
+				} 
+				elseif( $real_item_count == 1 ) {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				} 
+				else {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				}
+			return $string;
+			}
+			else {
+			} 
+		</v:php></i></div>
+      </div>
+        <div class="col-sm-6 exMobile"><div class="logo"> <a href="index.html" ><img src="/images/logo.png"></a></div></div>
+        <div class="col-sm-6">
+          <ul class="top-nav">
+            <li><a href="http://instagram.com/Rochambeaunyc" target="_blank">#ROCHAMBEAU</a></li>
+            <li><v:php> 
+			$item_count = verb_store_cart_items();
+			$real_item_count = 0;
+			foreach( $item_count as $item ) {
+				$real_item_count += $item['qty'];
+			}
+			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
+			if($real_item_count != 0){
+				if ($real_item_count == 0) {
+					$string = ' <a href="/cart">CART <span>(' . '0' .  ')</span></a> ';
+				} 
+				elseif( $real_item_count == 1 ) {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				} 
+				else {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				}
+			return $string;
+			}
+			else {
+			} 
+		</v:php></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-main">
+    <div class="container">
+      <ul>
+        <li class="dropdown"> <a href="/index.html" class="active">SHOP</a> </li>
+        <li class="dropdown"> <a href="/collectionS14.html" >COLLECTIONS</a> </li>
+        <li class="dropdown"> <a href="/films.html">FILMS</a> </li>
+        <li class="dropdown"> <a href="/stockist.html">STOCKIST</a> </li>
+        <li class="dropdown right-one exMobile"> <a href="/press.html">PRESS</a> </li>
+      </ul>
+    </div>
+  </div>
+  <!--<div class="subNav">
+    <div class="container">
+      <ul>
+        <li class="dropdown"> <a href="/index.html" class="active">ALL</a> </li>
+        <li class="dropdown"> <a href="shop.html/item/1413099" >NEW</a> </li>
+        <li class="dropdown"> <a href="shop.html/item/1413099">SHIRTS</a> </li>
+        <li class="dropdown"> <a href="shop.html/item/1413099">PANTS</a> </li>
+        <li class="dropdown right-one"> <a href="shop.html/item/1413099">JACKETS</a> </li>
+      </ul>
+    </div>
+  </div>-->
+  <div class="body-cart bodyCartMar">
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+        <div id="item-nav">
+				
+				<v:if path="../following-sibling::shop[1]/colors[1]">
+					<v:a href="/item" path="../following-sibling::shop[1]/colors[1]" class="next right">Next <span class="arrow">&rsaquo;</span></v:a>
+				</v:if>
+				<v:else>
+					<v:a href="/item" path="/shop[1]/colors[1]" class="next right">Next <span class="arrow">&rsaquo;</span></v:a>
+				</v:else>
+				
+				<span class="divider right"> | </span>
+				
+				<v:if path="../preceding-sibling::shop[1]/colors[1]">
+					<v:a href="/item" path="../preceding-sibling::shop[1]/colors[1]" class="previous right"><span class="arrow">&lsaquo;</span> Prev</v:a>
+				</v:if>
+				<v:else>
+					<v:collection path="/shop" order="DESC()" limit="1">
+						<v:a href="/item" path="colors" class="previous right"><span class="arrow">&lsaquo;</span> Prev</v:a>
+					</v:collection>
+				</v:else>
+				
+				<a href="/" class="home left"><span class="arrow">&lsaquo;</span> Home</a> </div>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-7">
+          <div class="imageCar">
+            <div class="m-carousel m-fluid m-carousel-photos"> 
+              <!-- the slider -->
+              <div class="m-carousel-inner"> 
+                <!-- the items -->
+                <div class="m-item m-active"> <v:img path="main_image" /> </div>
+                <v:collection path="other_images"><div class="m-item"> <v:img path="image" /> </div></v:collection>
+              </div>
+              <!-- the controls -->
+              <div class="m-carousel-controls m-carousel-bulleted"> <a href="#" data-slide="1" class="m-active">1</a> <a href="#" data-slide="2">2</a> <a href="#" data-slide="3">3</a> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="cart-info">
+            <h6>
+                <h2><v:text path="../name" /></h2>
+                <p class="price">
+                    <v:if path="../sale_price">
+                        <span class="cross_out">$<v:text path="../price" number_format="2" /></span><br />
+                        $<v:text path="../sale_price" number_format="2" />
+                    </v:if>
+                    <v:else>
+                        $<v:text path="../price" number_format="2" />
+                    </v:else>
+                </p>
+            </h6>
+            <p><v:text path="../description" /></p>
+            <v:if path="../colors/color">
+				<div id="color-options">Colors:
+					<v:collection path="../colors"><v:a href="/item" id="color<v->"><v:text path="color" /></v:a></v:collection>
+				</div>
+			</v:if>
+            <v:if path="../sale_price">
+				<v:store:add_to_cart redirect="/cart" name="<v=../name> - <v=color>" price_field="../sale_price" options_collection="sizes" option_field="size" inventory_field="inventory" weight="1">
+					<div id="size-options" class="v_inputs">
+						<v:option_select name="options" path="sizes" fields="size" />
+					</div>
+					<div id="quantity"> Quantity: <v:text_field name="quantity" value="1" class="quantity-field text-field" /></div>
+					<a href="#" class="button left" onclick="$('form').submit();return false;">Add to Cart</a> 
+				</v:store:add_to_cart>
+				<v:else>
+					<br /><p><v=../sold_out></p>
+				</v:else>
+			</v:if>
+			
+			<v:elseif path="../price">
+				<v:store:add_to_cart redirect="/cart" name="<v=../name> - <v=color>" price_field="../price" options_collection="sizes" option_field="size" inventory_field="inventory" weight="1">
+					<div id="size-options" class="v_inputs">
+						<v:option_select name="options" path="sizes" fields="size" />
+					</div>
+					<div id="quantity"> Quantity: <v:text_field name="quantity" value="1" class="quantity-field text-field" /></div>
+					<a href="#" class="button left" onclick="$('form').submit();return false;">Add to Cart</a> 
+				</v:store:add_to_cart>
+				<v:else>
+					<br /><p><v=../sold_out></p>
+				</v:else>
+			</v:elseif>
+		
+            
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- old content-->
+	
+	
+	<v:template filename="__footer" />
+	
+</div>
+<script type="text/javascript"> 
+		jQuery(document).ready(function($) {
+			// We only want these styles applied when javascript is enabled
+			$('div.navigation').css({'float' : 'left'});
+			$('div.content').css('display', 'block');
+	
+			// Initially set opacity on thumbs and add
+			// additional styling for hover effect on thumbs
+			var onMouseOutOpacity = 0.50;
+			$('#thumbs ul.thumbs li').opacityrollover({
+				mouseOutOpacity:   onMouseOutOpacity,
+				mouseOverOpacity:  1.0,
+				fadeSpeed:         'slow',
+				exemptionSelector: '.selected'
+			});
+			
+			// Initialize Advanced Galleriffic Gallery
+			var gallery = $('#thumbs').galleriffic({
+				delay:                     2500,
+				numThumbs:                 15,
+				preloadAhead:              10,
+				enableTopPager:            true,
+				enableBottomPager:         true,
+				maxPagesToShow:            7,
+				imageContainerSel:         '#slideshow',
+				controlsContainerSel:      '#controls',
+				captionContainerSel:       '#caption',
+				loadingContainerSel:       '#loading',
+				renderSSControls:          true,
+				renderNavControls:         true,
+				playLinkText:              'Play Slideshow',
+				pauseLinkText:             'Pause Slideshow',
+				prevLinkText:              '&lsaquo; Previous Photo',
+				nextLinkText:              'Next Photo &rsaquo;',
+				nextPageLinkText:          'Next &rsaquo;',
+				prevPageLinkText:          '&lsaquo; Prev',
+				enableHistory:             false,
+				autoStart:                 false,
+				syncTransitions:           true,
+				defaultTransitionDuration: 900,
+				onSlideChange:             function(prevIndex, nextIndex) {
+					// 'this' refers to the gallery, which is an extension of $('#thumbs')
+					this.find('ul.thumbs').children()
+						.eq(prevIndex).fadeTo('slow', onMouseOutOpacity).end()
+						.eq(nextIndex).fadeTo('slow', 1.0);
+				},
+				onPageTransitionOut:       function(callback) {
+					this.fadeTo('slow', 0.0, callback);
+				},
+				onPageTransitionIn:        function() {
+					this.fadeTo('slow', 1.0);
+				}
+			});
+		});
+</script>
+<v:asset src="js/jquery-1.10.2.min.js" />
+<v:asset src="js/bootstrap.js" />
+<v:asset src="js/bootstrap.min.js" />
+<v:asset src="js/dropdown.js" />
+<v:asset src="js/custom.js" />
+<v:asset type="text/javascript" src="js/carousel.js" />
+<script>$('.m-carousel').carousel()</script>
+</body>
+</html>

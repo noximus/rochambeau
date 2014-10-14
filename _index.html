@@ -56,11 +56,11 @@
 					$string = ' <a href="/cart">CART <span>(' . '0' .  ')</span></a> ';
 				} 
 				elseif( $real_item_count == 1 ) {
-					$string = $real_item_count . "";
+					$string = $real_item_count . " Item";
 					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
 				} 
 				else {
-					$string = $real_item_count . "";
+					$string = $real_item_count . " Items";
 					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
 				}
 			return $string;
@@ -73,30 +73,7 @@
         <div class="col-sm-6">
           <ul class="top-nav">
             <li><a href="http://instagram.com/Rochambeaunyc" target="_blank">#ROCHAMBEAU</a></li>
-            <li><v:php> 
-			$item_count = verb_store_cart_items();
-			$real_item_count = 0;
-			foreach( $item_count as $item ) {
-				$real_item_count += $item['qty'];
-			}
-			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
-			if($real_item_count != 0){
-				if ($real_item_count == 0) {
-					$string = ' <a href="/cart">CART <span>(' . '0' .  ')</span></a> ';
-				} 
-				elseif( $real_item_count == 1 ) {
-					$string = $real_item_count . "";
-					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
-				} 
-				else {
-					$string = $real_item_count . "";
-					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
-				}
-			return $string;
-			}
-			else {
-			} 
-		</v:php></li>
+            <li><a href="cart.html">CART &nbsp; ( 2 )</a></li>
           </ul>
         </div>
       </div>
@@ -137,32 +114,66 @@
   <div class="body-cart body-collect">
     <div class="container">
       <div class="gallry-img">
-        <v:collection path="shop/colors[main_image != '']">
-            <div class="gallry-innr">
-                <v:a href="item">
-                    <div class="gllry-txt">
-                        <span>
-                            <v:text path="../name" /><br>
-                            <v:if path="../sale_price">
-							<span class="cross_out">$<v:text path="../price" number_format="2" /></span><br />
-                                $<v:text path="../sale_price" number_format="2" />
-                            </v:if>
-                            <v:else>
-                                $<v:text path="../price" number_format="2" />
-                            </v:else>
-                        </span>
-                    </div>
-                </v:a>
-                <v:img path="main_image" height="242px"/>
-            </div>
-            <v:divider every="4"><div class="clear"></div></v:divider>
-        </v:collection>
+        <div class="gallry-innr"><a href="shop-detail.html">
+          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
+          </a><img src="images/collectn_02.jpg"></div>
+        <div class="gallry-innr"><a href="shop-detail.html">
+          <div class="gllry-txt"><span>STYRI CARDIGAN<br>$290.00</span></div>
+          </a><img src="images/collectn_04.jpg"></div>
+        <div class="gallry-innr"><a href="shop-detail.html">
+          <div class="gllry-txt"><span>SLEEVELESS SUGAT SHIRT<br>$285.00</span></div>
+          </a><img src="images/collectn_06.jpg"></div>
+        <div class="gallry-innr"><a href="shop-detail.html">
+          <div class="gllry-txt"><span>NYAL JERSEY<br>$290.00</span></div>
+          </a><img src="images/collectn_07.jpg"></div>
+        <div class="gallry-innr"><a href="shop-detail.html">
+          <div class="gllry-txt"><span>VALPHAR JERSEY<br>$330.00</span></div>
+          </a><img src="images/collectn_14.jpg"></div>
+        <div class="gallry-innr"><a href="shop-detail.html">
+          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
+          </a><img src="images/collectn_16.jpg"></div>
+        <div class="gallry-innr"><a href="shop-detail.html">
+          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
+          </a><img src="images/collectn_18.jpg"></div>
+        <div class="gallry-innr"><a href="shop-detail.html">
+          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
+          </a><img src="images/collectn_20.jpg"></div>
       </div>
     </div>
   </div>
- <v:template filename="__footer" />
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="copy-txt">
+            <p>© ROCHAMBEAU 2014 NEW YORK CITY</p>
+          </div>
+          <div class="mobil-footer">
+            <p>COPYRIGHT ROCHAMBEAU | <a href="about.html"> ABOUT</a></p>
+          </div>
+          <ul class="foot-nav">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="">|</a></li>
+            <li><a href="">TERMS &amp; CONDITIONS</a></li>
+            <li><a href="">|</a></li>
+            <li><a href="">PRIVACY POLICY</a></li>
+            <li><a href="">|</a></li>
+            <li><a href="">CONTACT</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <ul class="socil-link">
+            <li><a target="_blank" href="https://twitter.com/RochambeauNYC"><i class="fa fa-twitter"></i></a></li>
+            <li><a  target="_blank"href="https://www.facebook.com/rochambeaunyc"><i class="fa fa-facebook"></i> </a></li>
+            <li><a  target="_blank"href="http://beaunyc.tumblr.com/"><i class="fa fa-tumblr"></i></a></li>
+            <li><a  target="_blank"href="http://instagram.com/Rochambeaunyc"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
+<v:template filename="__footer" />
 <script src="js/jquery-1.10.2.min.js"></script> 
 <script src="js/bootstrap.js"></script> 
 <script src="js/bootstrap.min.js"></script> 

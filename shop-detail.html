@@ -43,13 +43,59 @@
       <div class="col-sm-6 mobileOnly">
         <div class="col-xs-1"><a  target="_blank" href="http://instagram.com/Rochambeaunyc"><i class="fa fa-instagram"></i></a></div>
         <div class="col-xs-9"><div class="logo"> <a href="index.html" ><img src="images/logo.png"></a></div></div>
-        <div class="col-xs-1 right-one"><a  target="_blank" href="cart.html">CART</i></a></div>
+        <div class="col-xs-1 right-one"><i><v:php> 
+			$item_count = verb_store_cart_items();
+			$real_item_count = 0;
+			foreach( $item_count as $item ) {
+				$real_item_count += $item['qty'];
+			}
+			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
+			if($real_item_count != 0){
+				if ($real_item_count == 0) {
+					$string = ' <a href="/cart">CART <span>(' . '0' .  ')</span></a> ';
+				} 
+				elseif( $real_item_count == 1 ) {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				} 
+				else {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				}
+			return $string;
+			}
+			else {
+			} 
+		</v:php></i></div>
       </div>
         <div class="col-sm-6 exMobile"><div class="logo"> <a href="index.html" ><img src="images/logo.png"></a></div></div>
         <div class="col-sm-6">
           <ul class="top-nav">
             <li><a href="http://instagram.com/Rochambeaunyc" target="_blank">#ROCHAMBEAU</a></li>
-            <li><a href="cart.html">CART &nbsp; ( 2 )</a></li>
+            <li><v:php> 
+			$item_count = verb_store_cart_items();
+			$real_item_count = 0;
+			foreach( $item_count as $item ) {
+				$real_item_count += $item['qty'];
+			}
+			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
+			if($real_item_count != 0){
+				if ($real_item_count == 0) {
+					$string = ' <a href="/cart">CART <span>(' . '0' .  ')</span></a> ';
+				} 
+				elseif( $real_item_count == 1 ) {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				} 
+				else {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				}
+			return $string;
+			}
+			else {
+			} 
+		</v:php></li>
           </ul>
         </div>
       </div>
@@ -86,8 +132,8 @@
               <!-- the slider -->
               <div class="m-carousel-inner"> 
                 <!-- the items -->
-                <div class="m-item m-active"> <img src="images/cart-img.jpg"> </div>
-                <div class="m-item"> <img src="images/cart-img-2.jpg"> </div>
+                <div class="m-item m-active"> <v:img path="main_image" /> </div>
+                <v:collection path="other_images"><div class="m-item"> <v:img path="image" /> </div></v:collection>
                 <div class="m-item"> <img src="images/cart-img-3.jpg"> </div>
               </div>
               <!-- the controls -->
@@ -97,8 +143,22 @@
         </div>
         <div class="col-sm-5">
           <div class="cart-info">
-            <h6>CHARUN SHIRT</h6>
-            <p>SHORT DESCRIPTION GOES HERE. Short Description goes here </p>
+            <h6>
+                <v:text path="../name" /><br>
+                <v:if path="../sale_price">
+					<span class="cross_out">$<v:text path="../price" number_format="2" /></span><br />
+					$<v:text path="../sale_price" number_format="2" />
+				</v:if>
+				<v:else>
+					$<v:text path="../price" number_format="2" />
+				</v:else>
+            </h6>
+            <p><v:text path="../description" /></p>
+            <v:if path="../colors/color">
+				<div id="color-options">Colors:
+					<v:collection path="../colors"><v:a href="/item" id="color<v->"><v:text path="color" /></v:a></v:collection>
+				</div>
+			</v:if>
             <ul>
               <li><a href="">SMALL</a></li>
               <li><a href="">MEDIUM</a></li>

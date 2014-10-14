@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><v=/seo/title></title>
+<meta name="description" content="<v=/seo/description>" />
+<v:if path="staging()"><meta name="robots" content="noindex"></v:if>
+<v:asset framework="jquery" />
+<v:asset src="/css/styles.css" />
+<v:asset src="/css/styles.css" />
+<v:asset src="/css/galleriffic.css" />
+<v:asset src="/css/bootstrap.css" />
+<v:asset src="/css/bootstrap.min.css" />
+<v:asset src="/css/bootstrap-theme.css" />
+<v:asset src="/css/font-awesome.min.css" />
+<v:asset src="/css/carousel.css" />
+<v:asset src="/css/carousel-style.css" />
+<v:asset src="/css/style.css" />
+<script type="text/javascript" src="//use.typekit.net/rpm1ssp.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script>
+    $(document).ready(function() {
+        $(".fade").hover(function() {
+            $(this).fadeTo("slow", 0.6); // This sets the opacity to 60% on hover
+        }, function() {
+            $(this).fadeTo("slow", 1.0); // This sets the opacity back to 100% on mouseout
+        });
+    });
+	function shipping_billing() {
+		fields = new Array('name','address','address_2','city','state','state_txt','country','phone','zip');
+		for (var q in fields) {
+		document.getElementById('billing_'+fields[q]).value = document.getElementById('shipping_'+fields[q]).value;
+		}
+		jQuery("#billing_country").trigger('change');
+	}
+</script>
+<v=/seo/analytics>
+</head>
+<body id="checkout">
+<div class="top-head">
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-6 mobileOnly">
+        <div class="col-xs-1"><a  target="_blank" href="http://instagram.com/Rochambeaunyc"><i class="fa fa-instagram"></i></a></div>
+        <div class="col-xs-9"><div class="logo"> <a href="index.html" ><img src="/images/logo.png"></a></div></div>
+        <div class="col-xs-1 right-one"><i><v:php> 
+			$item_count = verb_store_cart_items();
+			$real_item_count = 0;
+			foreach( $item_count as $item ) {
+				$real_item_count += $item['qty'];
+			}
+			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
+			if($real_item_count != 0){
+				if ($real_item_count == 0) {
+					$string = ' <a href="/cart">CART <span>(' . '0' .  ')</span></a> ';
+				} 
+				elseif( $real_item_count == 1 ) {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				} 
+				else {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				}
+			return $string;
+			}
+			else {
+			} 
+		</v:php></i></div>
+      </div>
+        <div class="col-sm-6 exMobile"><div class="logo"> <a href="index.html" ><img src="/images/logo.png"></a></div></div>
+        <div class="col-sm-6">
+          <ul class="top-nav">
+            <li><a href="http://instagram.com/Rochambeaunyc" target="_blank">#ROCHAMBEAU</a></li>
+            <li><v:php> 
+			$item_count = verb_store_cart_items();
+			$real_item_count = 0;
+			foreach( $item_count as $item ) {
+				$real_item_count += $item['qty'];
+			}
+			//will cause the cart to only show on pages other than the index page and only when there is 1 or more items in it
+			if($real_item_count != 0){
+				if ($real_item_count == 0) {
+					$string = ' <a href="/cart">CART <span>(' . '0' .  ')</span></a> ';
+				} 
+				elseif( $real_item_count == 1 ) {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				} 
+				else {
+					$string = $real_item_count . "";
+					$string = ' <a href="/cart">CART <span>(' . $string . ')</span></a> ';
+				}
+			return $string;
+			}
+			else {
+			} 
+		</v:php></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-main">
+    <div class="container">
+      <ul>
+        <li class="dropdown"> <a href="index.html" class="active">SHOP</a> </li>
+        <li class="dropdown"> <a href="collectionS14.html" >COLLECTIONS</a> </li>
+        <li class="dropdown"> <a href="films.html">FILMS</a> </li>
+        <li class="dropdown"> <a href="stockist.html">STOCKIST</a> </li>
+        <li class="dropdown right-one exMobile"> <a href="press.html">PRESS</a> </li>
+      </ul>
+    </div>
+  </div>
+<div class="container">
+<div class="row">
+	<div class="col-sm-10 center-block">
+		<div id="item-nav"><a href="/cart" class="home left"><span class="arrow">&lsaquo;</span> Return to cart</a></div>
+		<v:store:register redirect="/payment">
+			<div id="shipping-address" class="table-responsive col-sm-4">
+				<h4>Shipping Address</h4>
+				<table class="table">
+					<tr>
+						<td colspan="2" valign="top">Name<br />
+							<v:text_field path="shipping_name" required="name" class="text-field" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" valign="top">Address<br />
+							<v:text_field path="shipping_address" required="true" class="text-field" />
+							<br />
+							<v:text_field path="shipping_address_2" class="text-field" /></td>
+					</tr>
+					<tr>
+						<td valign="top">City<br />
+							<v:text_field path="shipping_city" required="true" class="text-field small" /></td>
+						<td width="100" valign="top">State / County<br />
+							<v:state_select path="shipping_state" required="true" id="shipping_state" /></td>
+					</tr>
+					<tr>
+						<td valign="top">Zip Code<br />
+							<v:text_field path="shipping_zip" required="true" class="text-field small" /></td>
+						<td width="100" valign="top">Country<br />
+							<v:country_select path="shipping_country" required="true" id="shipping_country" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" valign="top">Telephone<br />
+							<v:text_field path="shipping_phone" required="true" class="text-field" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" valign="top">E-Mail<br />
+							<v:text_field path="e_mail_address" required="email" class="text-field" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" valign="top">Confirm E-Mail<br />
+							<v:text_field path="confirm_e_mail_address" required="email" class="text-field" /></td>
+					</tr>
+				</table>
+			</div>
+			<div id="billing-address" class="table-responsive col-sm-4"> <a href='#same_as_billing' id="shipping_billing" onclick="shipping_billing()">Copy shipping address</a>
+				<h4>Billing Address</h4>
+				<table class="table">
+					<tr>
+						<td colspan="2" valign="top">Name<br />
+							<v:text_field path="billing_name" required="name" class="text-field" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" valign="top">Address<br />
+							<v:text_field path="billing_address" required="true" class="text-field" />
+							<br />
+							<v:text_field path="billing_address_2" class="text-field" /></td>
+					</tr>
+					<tr>
+						<td valign="top">City<br />
+							<v:text_field path="billing_city" required="true" class="text-field small" /></td>
+						<td width="100" valign="top">State / County<br />
+							<v:state_select path="billing_state" required="true" id="billing_state" /></td>
+					</tr>
+					<tr>
+						<td valign="top">Zip Code<br />
+							<v:text_field path="billing_zip" required="true" class="text-field small" /></td>
+						<td width="100" valign="top">Country<br />
+							<v:country_select path="billing_country" required="true" id="billing_country" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" valign="top">Telephone<br />
+							<v:text_field path="billing_phone" required="true" class="text-field" /></td>
+					</tr>
+				</table>
+				<a href="#" class="button right" onclick="$('form').submit();return false;">Checkout</a> </div>
+		</v:store:register>
+	</div>
+	</div>
+	
+	
+</div><v:template filename="__footer" />
+</body>
+</html>

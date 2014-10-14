@@ -1,74 +1,106 @@
-@charset "UTF-8";
-/* CSS Document */
-.heroBG{
-    min-height:342px;
-    background-image:url(../images/Hero.jpg);
-    background-size:cover;
-    background-position:top center;
+/******** FONTS ********/
+@font-face {
+ font-family: 'BodoniStdBook';
+ src: url('../fonts/bodonistd-book-webfont.eot');
+ src: local('☺'), url('../fonts/bodonistd-book-webfont.woff') format('woff'), url('../fonts/bodonistd-book-webfont.ttf') format('truetype'), url('../fonts/bodonistd-book-webfont.svg#webfontCmDSf5lc') format('svg');
+ font-weight: normal;
+ font-style: normal;
 }
-.footer {
-    background-color:#bbc8bd;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    min-height: 48px;
-    font-size:8px;
+@font-face {
+ font-family: 'BodoniStdRoman';
+ src: url('../fonts/bodonistd-webfont.eot');
+ src: local('☺'), url('../fonts/bodonistd-webfont.woff') format('woff'), url('../fonts/bodonistd-webfont.ttf') format('truetype'), url('../fonts/bodonistd-webfont.svg#webfontREsMgIzx') format('svg');
+ font-weight: normal;
+ font-style: normal;
 }
-footer{
-    padding-top:18px;
-    color:white;   
-}
-.jumbotron{
-    margin-bottom:50px;    
-}
-@media (min-width: 768px) {
-    .heroBG{
-        min-height:440px;
-    }
-    .footer {
-        min-height: 68px;
-        font-size:10px;
-    }
-    footer{
-        padding-top:28px;
-    }
-    .navbar{
-        height:138px;
-    }
-    .navbar-brand, .navbar-badge {
-        margin-top: 16px;
-    }
-    .jumbotron{
-        margin-bottom:75px;    
-    }
-}
-@media (min-width: 992px) {
-    .heroBG{
-        min-height:550px;
-    }
-    .footer {
-        min-height: 100px;
-        font-size:11px;
-    }
-    footer{
-        padding-top:40px;
-    }
-    .navbar{
-        height:238px;
-    }
-    .navbar-brand, .navbar-badge {
-        margin-top: 36px;
-    }
-    ul.nav.nav-pills {
-        margin-top: 15px;
-    }
-    .jumbotron{
-        margin-bottom:100px;    
-    }
-}
-@media (min-width: 1200px) {
-    .heroBG{
-        min-height:760px;
-    }
-    
-}
+/******** TEXT ********/
+h1 { margin:6px 0 12px; padding:0; font-size:18px; text-transform:uppercase; font-weight:normal }
+h2 { margin:6px 0 12px; padding:0; font-size:16px; text-transform:uppercase; font-weight:normal }
+h3 { margin:6px 0 12px; padding:0; font-size:14px; text-transform:uppercase; font-weight:normal }
+h4 { margin:6px 0 12px; padding:0; font-size:12px; text-transform:uppercase; font-weight:normal }
+p { margin:6px 0 12px; padding:0; font-size:12px; line-height:18px }
+/******** LAYOUT ********/
+body, table { margin:0; font-family:'BodoniStdBook', "Times New Roman", Times, serif }
+#container { width: 960px; margin:24px auto; overflow:auto }
+#logo { float:left }
+#navigation { float:right; margin:0 15px 90px 0; font-size:12px; font-family:'BodoniStdRoman', "Times New Roman", Times, serif }
+#main { float:right; clear:right; width:790px }
+#footer { clear:both; padding:100px 0 0; font-size:12px }
+/******** SPECIAL ********/
+.left { float:left }
+.right { float:right }
+.button { display:block; margin:0; padding:6px 8px 3px; color:#868686; border:1px solid #E3E3E3; text-transform:uppercase; font-size:12px; line-height:18px }
+.button:hover { border:1px solid #999; color:#2F2F2F }
+.arrow { font-family:"Times New Roman", Times, serif }
+.gray { color:#999 }
+.clear { clear: both; }
+/******** LINKS ********/
+a { color:#000; text-decoration:none }
+a:hover { color:#777 }
+a img { border:none; outline:none }
+a:focus { outline:none }
+/******** FORMS ********/
+input.text-field, #shipping_state_txt, #billing_state_txt { border:1px solid #E3E3E3; font-family:"Times New Roman", Times, serif; outline:none; width:270px; padding:4px; font-size:12px; color:#999 }
+input.text-field:focus { border:1px solid #999; color:#000 }
+input.text-field.quantity-field { width:22px; padding:2px; text-align:center }
+.flash.err { color:#7A3D32; font-size:14px; margin:20px 24px }
+.flash.err ul { margin:0; padding:0 }
+.flash.err li { margin:6px 20px; padding:0; list-style-type:square }
+input[type="radio"], input[type="checkbox"] { background:#F00 !important; color:#FC0  !important }
+/******** FOOTER ********/
+#footer-nav { margin:0 15px 0 0; padding:0; float:right }
+#footer-nav li { float:left; display:inline; margin:0 0 0 24px; padding:0 }
+#copyright { margin:0 0 0 15px; padding:0; float:left }
+#copyright li { float:left; display:inline; margin:0; padding:0 }
+/******** STORE ********/
+#home #main { width:700px; margin:0 90px 0 0 }
+.item { float:left; display:inline; width:238px; margin:0 24px 40px 48px }
+.item a { display: block; }
+.item-info { clear:both; margin:12px 2px 0; text-transform:uppercase }
+.item-name { font-size:14px; width:180px }
+.item-price { font-size:12px }
+.cross_out { text-decoration: line-through; color: #999; }
+/******** ITEM ********/
+#item .col1 { float:left; width:392px; margin:0 0 0 24px }
+#item .col2 { float:right; width:340px }
+#item h1 { margin-top:32px }
+#color-options, #size-options, #quantity { font-size:12px; margin:30px 0; clear:both }
+#color-options a, #size-options a { padding:4px 6px 2px }
+#size-options .selected { border:1px solid #E3E3E3 }
+#style-options div { font-size:12px; margin:30px 0; clear:both }
+#item-nav { padding:0 2px 10px; overflow:auto }
+.home, .next, .previous, .divider { font-size:12px }
+.divider { margin:0 8px }
+.v_inputs select { display: none }
+/******** CART ********/
+#cart table { text-transform:uppercase; font-size:12px }
+#cart table th { border-bottom:1px solid #BFBFBF; padding:12px 0; font-weight:normal }
+#cart table td { border-bottom:1px solid #D8D8D8; padding:15px 0; line-height:24px }
+#cart table #table-row-bottom td { border-bottom:none }
+/******** CHECKOUT ********/
+#shipping-address, #billing-address { width:280px; float:left; margin:20px 24px 0; padding:2px; border-top:1px solid #BFBFBF }
+#checkout #item-nav { margin:0 24px }
+#checkout table { font-size:12px }
+#checkout table td { padding:0 0 10px }
+#checkout table input.text-field { margin:0 0 10px }
+#checkout table input.text-field.small, #checkout table input#shipping_state_txt, #checkout table input#billing_state_txt { width:120px }
+#checkout select { width:140px }
+#shipping_billing { float:right; font-size:11px; margin:7px 0 0 }
+#checkout .button { margin:74px 0 0 }
+/******** PAYMENT ********/
+#order-info { border-top:1px solid #BFBFBF; margin:0 0 40px; padding:2px }
+#order-info { text-transform:uppercase; font-size:12px }
+#order-info td { padding:15px 0; line-height:24px }
+#order-info #table-row-bottom td { border-bottom:none }
+#buyer-info { overflow:auto; margin:0 0 40px }
+#buyer-info .col1, #buyer-info .col2 { width:221px; margin:0 57px 0 0; padding:2px; border-top:1px solid #BFBFBF }
+#buyer-info .col3 { width:221px; margin:0; padding:2px; border-top:1px solid #BFBFBF }
+#buyer-info table, #purchase-summary table { font-size:12px }
+#buyer-info table td { padding:0 0 8px }
+#buyer-info table input.text-field { width:210px; margin:0 0 10px }
+#buyer-info table input.text-field.month { width:40px; text-align:center }
+#buyer-info table input.text-field.year { width:60px; text-align:center }
+#buyer-info #shipping-summary td, #buyer-info #billing-summary td, #purchase-summary #cost-info td { padding:0 0 10px }
+#purchase-summary { border-top:1px solid #BFBFBF; clear:both; padding:2px }
+#purchase-summary #cost-info #total-row td { border-top:1px solid #BFBFBF; padding:10px 0; text-transform:uppercase; color:#000 }
+#payment .button { margin:76px 0 0 }

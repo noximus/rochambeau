@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+<title><v=/seo/title></title>
+<meta name="description" content="<v=/seo/description>" />
+<v:if path="staging()"><meta name="robots" content="noindex"></v:if>
+<v:asset framework="jquery" />
+<v:asset src="/css/styles.css" />
+<script>
+    $(document).ready(function() {
+        $(".fade").hover(function() {
+            $(this).fadeTo("slow", 0.6); // This sets the opacity to 60% on hover
+        }, function() {
+            $(this).fadeTo("slow", 1.0); // This sets the opacity back to 100% on mouseout
+        });
+    });
+</script>
+<v=/seo/analytics>
+</head>
+<body id="home">
+<div id="container"><a href="/"><img src="images/logo.gif" width="135" height="203" alt="Rochambeau" id="logo" class="fade" /></a>
+	<div id="navigation"></div>
+	
+	<div id="main">
+		<v:text path="thanks/body" />
+	</div>
+	
+	<v:template filename="__footer" />
+	
+</div>
+</body>
+</html>

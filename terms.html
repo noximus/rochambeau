@@ -48,23 +48,7 @@
 		</v:php>
 	</div>
 	<div id="main">
-		<v:collection path="shop/colors[main_image != '']">
-			<div class="item"><v:a href="item"><v:img path="main_image" image_size="238x357" width="238" height="357" class="fade" /></v:a>
-				<div class="item-info">
-					<div class="item-name left"><v:a href="item"><v:text path="../name" /></v:a></div>
-					<div class="item-price right">
-						<v:if path="../sale_price">
-							<span class="cross_out">$<v:text path="../price" number_format="2" /></span><br />
-							$<v:text path="../sale_price" number_format="2" />
-						</v:if>
-						<v:else>
-							$<v:text path="../price" number_format="2" />
-						</v:else>
-					</div>
-				</div>
-			</div>
-			<v:divider every="2"><div class="clear"></div></v:divider>
-		</v:collection>
+		<v:text path="footer/terms_conditions" />
 	</div>
 	
 	<v:template filename="__footer" />

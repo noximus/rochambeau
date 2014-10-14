@@ -6,20 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<title><v=/seo/title></title>
-<meta name="description" content="<v=/seo/description>" />
-<v:if path="staging()"><meta name="robots" content="noindex"></v:if>
-<v:asset framework="jquery" />
-<v:asset src="/css/styles.css" />
-<script>
-    $(document).ready(function() {
-        $(".fade").hover(function() {
-            $(this).fadeTo("slow", 0.6); // This sets the opacity to 60% on hover
-        }, function() {
-            $(this).fadeTo("slow", 1.0); // This sets the opacity back to 100% on mouseout
-        });
-    });
-</script>
+<title>Rochambeau</title>
+
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -37,13 +25,13 @@
 
 <body>
 <div class="wrapper">
-  <div class="top-head">
+        <div class="top-head">
     <div class="container">
       <div class="row">
       <div class="col-sm-6 mobileOnly">
         <div class="col-xs-1"><a  target="_blank" href="http://instagram.com/Rochambeaunyc"><i class="fa fa-instagram"></i></a></div>
         <div class="col-xs-9"><div class="logo"> <a href="index.html" ><img src="images/logo.png"></a></div></div>
-        <div class="col-xs-1 right-one"></i></div>
+        <div class="col-xs-1 right-one"><a  target="_blank" href="cart.html">CART</i></a></div>
       </div>
         <div class="col-sm-6 exMobile"><div class="logo"> <a href="index.html" ><img src="images/logo.png"></a></div></div>
         <div class="col-sm-6">
@@ -58,63 +46,45 @@
   <div class="nav-main">
     <div class="container">
       <ul>
-        <li class="dropdown"> <a href="index.html" class="active">SHOP</a> </li>
+        <li class="dropdown"> <a href="index.html">SHOP</a> </li>
         <li class="dropdown"> <a href="collectionS14.html" >COLLECTIONS</a> </li>
         <li class="dropdown"> <a href="films.html">FILMS</a> </li>
-        <li class="dropdown"> <a href="stockist.html">STOCKIST</a> </li>
-        <li class="dropdown right-one exMobile"> <a href="press.html">PRESS</a> </li>
-      </ul>
+        <li class="dropdown"> <a href="stockist.html" class="active">STOCKIST</a> </li>        <li class="dropdown right-one exMobile"> <a href="press.html">PRESS</a> </li>
+</ul>
     </div>
   </div>
   <div class="subNav">
     <div class="container">
       <ul>
-        <li class="dropdown"> <a href="index.html" class="active">ALL</a> </li>
-        <li class="dropdown"> <a href="shop.html/item/1413099" >NEW</a> </li>
-        <li class="dropdown"> <a href="shop.html/item/1413099">SHIRTS</a> </li>
-        <li class="dropdown"> <a href="shop.html/item/1413099">PANTS</a> </li>
-        <li class="dropdown right-one"> <a href="shop.html/item/1413099">JACKETS</a> </li>
+        <li class="dropdown"> <a href="stockist.html" class="active">ONLINE</a> </li>
+        <li class="dropdown"> <a href="stockist2.html">USA</a> </li>
+        <li class="dropdown"> <a href="stockist3.html" >INTERNATIONAL</a> </li>
+        <!--
+        <li class="dropdown right-one">
+            <a href="#" data-toggle="dropdown" role="button" id="drop5">+</a>
+            <ul aria-labelledby="drop5" role="menu" class="dropdown-menu" id="menu2">
+               <li><a href="collectionF11.html" >FALL 2011</a></li>             <li><a href="collectionF11mm.html">FALL 2011 MAC &amp; MILK</a></li>	
+	
+              <li><a href="collectionS11.html" >SPRING 2011</a></li> 
+              <li><a href="collectionF10.html" >FALL 2010</a></li>	
+              <li><a href="collectionS10.html" >SPRING 2010</a></li> 
+              <li><a href="collectionF09.html" >FALL 2009</a></li>	
+              <li><a href="collectionS09.html" >SPRING 2009</a></li> 
+            </ul>
+         </li>-->
       </ul>
     </div>
   </div>
   <div class="body-cart body-collect">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 gllry-wide"><img src="images/collectn.jpg"></div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="collect-part"><span>2013 ROCHAMBEAU SPRING/SUMMER COLLECTION AT MILK NYC</span></div>
-  </div>
-  <div class="body-cart body-collect">
-    <div class="container">
-      <div class="gallry-img">
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
-          </a><img src="images/collectn_02.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>STYRI CARDIGAN<br>$290.00</span></div>
-          </a><img src="images/collectn_04.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>SLEEVELESS SUGAT SHIRT<br>$285.00</span></div>
-          </a><img src="images/collectn_06.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>NYAL JERSEY<br>$290.00</span></div>
-          </a><img src="images/collectn_07.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>VALPHAR JERSEY<br>$330.00</span></div>
-          </a><img src="images/collectn_14.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
-          </a><img src="images/collectn_16.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
-          </a><img src="images/collectn_18.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
-          </a><img src="images/collectn_20.jpg"></div>
-      </div>
+    <div class="container bodyCartMar">
+      <div class="col-sm-4">
+        OAK NYC<br>
+        <a target="_blank" href="http://www.oaknyc.com/">http://www.oaknyc.com/</a><br>
+        </div>
+        <div class="col-sm-4">
+        OKI-NI<br>
+        <a href="http://www.oki-ni.com/">http://www.oki-ni.com/</a><br>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
   </div>
   <div class="footer">
@@ -149,7 +119,6 @@
     </div>
   </div>
 </div>
-<v:template filename="__footer" />
 <script src="js/jquery-1.10.2.min.js"></script> 
 <script src="js/bootstrap.js"></script> 
 <script src="js/bootstrap.min.js"></script> 

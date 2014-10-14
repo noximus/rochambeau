@@ -7,24 +7,24 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title><v=/seo/title></title>
-<meta name="description" content="<v=/seo/description>" />
+<meta name="description" content="<v=../seo>" />
 <v:if path="staging()"><meta name="robots" content="noindex"></v:if>
 <v:asset framework="jquery" />
+<v:asset src="/js/jquery.galleriffic.js" />
+<v:asset src="/js/jquery.opacityrollover.js" />
 <v:asset src="/css/styles.css" />
-<script>
-    $(document).ready(function() {
-        $(".fade").hover(function() {
-            $(this).fadeTo("slow", 0.6); // This sets the opacity to 60% on hover
-        }, function() {
-            $(this).fadeTo("slow", 1.0); // This sets the opacity back to 100% on mouseout
-        });
-    });
+<v:asset src="/css/galleriffic.css" />
+<script type="text/javascript"> 
+	document.write('<style>.noscript { display: none; }</style>');
 </script>
+
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
 <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/carousel.css" rel="stylesheet" type="text/css">
+<link href="css/carousel-style.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="//use.typekit.net/rpm1ssp.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -37,13 +37,13 @@
 
 <body>
 <div class="wrapper">
-  <div class="top-head">
+<div class="top-head">
     <div class="container">
       <div class="row">
       <div class="col-sm-6 mobileOnly">
         <div class="col-xs-1"><a  target="_blank" href="http://instagram.com/Rochambeaunyc"><i class="fa fa-instagram"></i></a></div>
         <div class="col-xs-9"><div class="logo"> <a href="index.html" ><img src="images/logo.png"></a></div></div>
-        <div class="col-xs-1 right-one"></i></div>
+        <div class="col-xs-1 right-one"><a  target="_blank" href="cart.html">CART</i></a></div>
       </div>
         <div class="col-sm-6 exMobile"><div class="logo"> <a href="index.html" ><img src="images/logo.png"></a></div></div>
         <div class="col-sm-6">
@@ -77,43 +77,36 @@
       </ul>
     </div>
   </div>
-  <div class="body-cart body-collect">
+  <div class="body-cart bodyCartMar">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 gllry-wide"><img src="images/collectn.jpg"></div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="collect-part"><span>2013 ROCHAMBEAU SPRING/SUMMER COLLECTION AT MILK NYC</span></div>
-  </div>
-  <div class="body-cart body-collect">
-    <div class="container">
-      <div class="gallry-img">
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
-          </a><img src="images/collectn_02.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>STYRI CARDIGAN<br>$290.00</span></div>
-          </a><img src="images/collectn_04.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>SLEEVELESS SUGAT SHIRT<br>$285.00</span></div>
-          </a><img src="images/collectn_06.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>NYAL JERSEY<br>$290.00</span></div>
-          </a><img src="images/collectn_07.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>VALPHAR JERSEY<br>$330.00</span></div>
-          </a><img src="images/collectn_14.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
-          </a><img src="images/collectn_16.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
-          </a><img src="images/collectn_18.jpg"></div>
-        <div class="gallry-innr"><a href="shop-detail.html">
-          <div class="gllry-txt"><span>CHARUN SHIRT<br>$320.00</span></div>
-          </a><img src="images/collectn_20.jpg"></div>
+        <div class="col-sm-7">
+          <div class="imageCar">
+            <div class="m-carousel m-fluid m-carousel-photos"> 
+              <!-- the slider -->
+              <div class="m-carousel-inner"> 
+                <!-- the items -->
+                <div class="m-item m-active"> <img src="images/cart-img.jpg"> </div>
+                <div class="m-item"> <img src="images/cart-img-2.jpg"> </div>
+                <div class="m-item"> <img src="images/cart-img-3.jpg"> </div>
+              </div>
+              <!-- the controls -->
+              <div class="m-carousel-controls m-carousel-bulleted"> <a href="#" data-slide="1" class="m-active">1</a> <a href="#" data-slide="2">2</a> <a href="#" data-slide="3">3</a> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="cart-info">
+            <h6>CHARUN SHIRT</h6>
+            <p>SHORT DESCRIPTION GOES HERE. Short Description goes here </p>
+            <ul>
+              <li><a href="">SMALL</a></li>
+              <li><a href="">MEDIUM</a></li>
+              <li><a href="">LARGE</a></li>
+            </ul>
+            <button class="btn btn-default" type="button">ADD TO CART</button>
+            <span>*Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> </div>
+        </div>
       </div>
     </div>
   </div>
@@ -149,11 +142,12 @@
     </div>
   </div>
 </div>
-<v:template filename="__footer" />
 <script src="js/jquery-1.10.2.min.js"></script> 
 <script src="js/bootstrap.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/dropdown.js"></script> 
-<script src="js/custom.js"></script>
+<script src="js/custom.js"></script> 
+<script type="text/javascript" src="js/carousel.js"></script> 
+<script>$('.m-carousel').carousel()</script>
 </body>
 </html>

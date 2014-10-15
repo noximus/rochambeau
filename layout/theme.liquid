@@ -25,7 +25,10 @@
   {% include 'twitter-cards' %}
 
   {{ 'bootstrap.css' | asset_url | stylesheet_tag }}
+  
   {{ 'PixelRockStyles.css' | asset_url | stylesheet_tag }}
+  {{ 'lightbox.css' | asset_url | stylesheet_tag }}
+  {{ 'screen.css' | asset_url | stylesheet_tag }}
   
   {{ 'html5shiv.js' | asset_url | script_tag }}
 
@@ -115,8 +118,8 @@
   {% endif %}
   {{ 'jquery.tweet.js' | asset_url | script_tag }}
   {{ 'jquery.fancybox.js' | asset_url | script_tag }}
-
-  
+  {{ 'jquery-1.11.0.min.js' | asset_url | script_tag }}
+  {{ 'lightbox.js' | asset_url | script_tag }}
   
   {{ 'bootstrap.min.js' | asset_url | script_tag }}
   <script type="text/javascript">$('.navbar-badge').popover(options);</script>

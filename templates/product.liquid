@@ -1,3 +1,4 @@
+<div class="container-fluid" >
 <div id="product" class="{{ product.handle }}" itemscope itemtype="http://schema.org/Product">
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
   <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}" />
@@ -5,7 +6,7 @@
   <div class="row clearfix">
     
     <!-- Begin breadcrumb -->
-    <div class="col-md-12">
+    <!-- <div class="col-md-12">
       <div class="breadcrumb clearfix">
         <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
           <a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a>
@@ -21,7 +22,7 @@
         <span class="arrow-space">&#62;</span>
         <strong>{{ product.title }}</strong>
       </div>
-    </div>
+    </div> -->
     <!-- End breadcrumb -->
 
     <!-- Begin product photos -->
@@ -128,14 +129,14 @@
 
       </form>
 
-      <div class="description" itemprop="description">
+      <!-- <div class="description" itemprop="description">
         {{ product.description }}
-      </div>
+      </div> -->
 
       <!-- Begin social buttons -->
-      <div class="social">
+      <!-- <div class="social">
         {% include 'like' %}
-      </div>
+      </div> -->
       <!-- End social buttons -->
     </div>
     <!-- End description -->
@@ -148,7 +149,7 @@
   {% endif %}
   
 </div> 
-
+</div>
 <div style="display:none" id="preloading">
 {% for image in product.images offset: 1 %}
 {{ image | product_img_url: '1024x1024' | img_tag }}
